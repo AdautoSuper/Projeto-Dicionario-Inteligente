@@ -1,0 +1,125 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.empresa{
+
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 110px;
+    font-weight: bold;
+    font-family: serif;
+}
+
+.corpo{
+
+    background-color: rgb(0, 0, 0);
+}
+
+
+.centro {
+
+    width: 600px;
+    margin: auto;
+    display: block;
+}
+
+.area {
+
+    background-color: rgb(0, 195, 255);
+}
+
+.area1 {
+
+    margin-left: 50px;
+
+    background-color: rgb(228, 225, 217);
+}
+
+.mercado {
+
+    font-weight: bold;
+    color: blue;
+}
+
+.Title {
+
+    text-align: center;
+    color: rgb(1, 163, 37);
+    font-size: 1.5rem;
+
+}
+
+.Formulario {
+
+    background-color: coral;
+    width: 600px;
+    margin: auto;
+    background-color: white;
+    border: 8px solid gray;
+    box-shadow: 10px 5px 5px black;
+    color: red;
+    font-weight: bold;
+    background-color: rgb(135, 217, 238);
+
+}
+
+label {
+
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+legend {
+
+    text-align: center;
+}
+
+.Campo {
+
+    display: block;
+    font-size: 1.1rem;
+    margin: 1px 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 600px; 
+
+} 
+
+.Campo:hover {
+
+    background-color: rgb(0, 255, 255);
+}
+
+textarea:hover {
+
+    background-color: rgb(0, 255, 255);
+}
+.Botao:hover {
+
+    background-color: rgb(255, 208, 0);
+}
+
+.hoje {
+    color: RED;
+}
+
+.Botao {
+
+    display: block;
+    width: 200px;
+    height: 40px;   
+    text-align: center; 
+    border: 5px solid blueviolet;
+    margin: 5px auto;
+   
+
+    border-radius: 10px;
+    background-color: yellow;
+    font-size: 18px; 
+
+}
+

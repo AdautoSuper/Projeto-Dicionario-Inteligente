@@ -1,0 +1,90 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(211, 184, 211);
+    font-weight: bold;
+}
+
+.Cont{
+ 
+     padding-left: 1pc;
+
+}
+
+
+.area {
+
+    background-color: rgb(175, 214, 185);
+}
+
+.Title {
+
+    text-align: center;
+    color: red;
+    font-size: 1.5rem;
+
+}
+
+.Formulario {
+
+    background-color: coral;
+    width: 600px;
+    margin: auto;
+    background-color: white;
+    border: 8px solid gray;
+    box-shadow: 10px 5px 5px black;
+    color: rgb(0, 26, 255);
+    font-weight: bold;
+    background-color: rgb(135, 217, 238);
+
+}
+
+label {
+
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+legend {
+
+    text-align: center;
+}
+
+.Campo {
+
+    display: block;
+    font-size: 1.1rem;
+    margin: 1px 10px;
+    border-radius: 5px;
+    height: 30px;
+    width: 200px; 
+
+} 
+
+.Campo:hover {
+
+    background-color: rgb(255, 242, 0);
+}
+
+.Botao:hover {
+
+    background-color: rgb(255, 208, 0);
+}
+
+.dBotao {
+
+    display: block;
+    width: 200px;;
+    padding: 10px;
+    text-align: center; 
+    border: 5px solid blueviolet;
+    margin: 5px auto;
+    padding: 25px 20px;
+  
+    border-radius: 10px;
+    background-color: rgb(0, 255, 221);
+    font-size: 18px; 
+   
+
+}
+

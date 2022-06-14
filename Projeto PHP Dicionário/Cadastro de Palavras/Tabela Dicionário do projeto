@@ -1,0 +1,15 @@
+Criar o Banco cadastrodepalavras e depois a tabela dicionario no comando abaixo:
+
+
+create table dicionario (id int(11) primary key auto_increment, portugues varchar(50) UNIQUE, haitiano varchar(50));
+
+
+
+----------------------------------
+
+Observação:
+
+Erro na conexão com o banco de dados.The server requested authentication method unknown to the client
+
+Se tal mensagem aparecer, basta trocar a senha e login das instâncias nos arquivos PHP's que fazem a conexão com o Banco de Dados.
+

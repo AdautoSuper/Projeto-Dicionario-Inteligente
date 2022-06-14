@@ -1,0 +1,22 @@
+Listamos o servidor Virtual Localhost:3000
+
+Obs. Use a mesma senha root de seu Workbench / PHP My Admin neste projeto!
+
+Criar o Banco dbestrangeiro e depois a tabela estrangeiros no comando abaixo.
+
+create database dbestrangeiro;
+
+
+create table estrangeiros (id int(11) primary key auto_increment, nome varchar(50), idade varchar(50), pais varchar(50), formacao varchar(50), profissao varchar(50), idiomas varchar(50), email varchar(50));
+
+
+
+----------------------------------
+
+Observação:
+
+Erro na conexão com o banco de dados.The server requested authentication method unknown to the client
+
+Se tal mensagem aparecer, basta trocar a senha e login das instâncias nos arquivos PHP's que fazem a conexão com o Banco de Dados.
+
+
