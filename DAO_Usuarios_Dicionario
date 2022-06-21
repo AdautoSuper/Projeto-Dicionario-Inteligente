@@ -1,0 +1,88 @@
+Imports System.Data
+Imports System.Data.SqlUsuario
+Public Class UsuarioDAO
+    Implements IUsuarioDAO(Of Usuario)
+
+    Private Shared ReadOnly instancia As New UsuarioDAO()
+
+    Sub New()
+    End Sub
+    Public Shared Function GetInstance() As UsuarioDAO
+        Return instancia
+    End Function
+    Public Function Consultar(ByVal nome As String) As DataTable 
+Implements IUsuarioDAO(Of Usuario).Consultar
+        Try
+            Using con As SqlConnection = ConexaoBD.GetInstancia.GetConnection()
+                Try
+                    con.Open()
+                    Dim sql As String = ("Select nome, idade from usuario where nome = '" & nome & "'")
+                    Dim cmd As SqlCommand = New SqlCommand(sql, con)
+                    Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
+                    Dim usuario As DataTable = New DataTable
+                    da.Fill(usuario)
+                    Return usuario
+                Catch ex As SqlException
+                    Throw ex
+                Finally
+                    con.Close()
+                End Try
+            End Using
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Sub Gravar(ByVal usuario As Usuario) 
+Implements IUsuarioDAO(Of Usuario).Gravar
+        Try
+            Using con As SqlConnection = ConexaoBD.GetInstancia.GetConnection()
+                Try
+                    con.Open()
+                    Dim cmd As SqlCommand = New SqlCommand()
+                    cmd.Connection = con
+                    cmd.CommandText = "INSERT INTO  Usuario (nome, idade) values (@nome, @idade)"
+                    Dim parNome As SqlParameter = New SqlParameter("@nome", usuario.NomeUsuario)
+                    Dim parIdade As SqlParameter = New SqlParameter("@idade", usuario.IdadeUsuario)
+                    cmd.Parameters.Add(parNome)
+                    cmd.Parameters.Add(parIdade)
+                    cmd.ExecuteNonQuery()
+                Catch ex As SqlException
+                    Throw ex
+                Finally
+                    con.Close()
+                End Try
+            End Using
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Public Function ExibirTodos() As List(Of Usuario) 
+Implements IUsuarioDAO(Of Usuario).ExibirTodos
+        Try
+            Using con As SqlConnection = ConexaoBD.GetInstancia.GetConnection()
+                Try
+                    con.Open()
+                    Dim sql As String = ("Select Id,nome, idade from Usuario")
+                    Dim listaUsuarios As IList(Of Usuario) = New List(Of Usuario)
+                    Dim cmd As SqlCommand = New SqlCommand(sql, con)
+                    Dim dr As SqlDataReader = cmd.ExecuteReader
+                    While (dr.Read)
+                        Dim Usuario As New Usuario
+                        Usuario.Codigo = CLng(dr("Id"))
+                        Usuario.NomeUsuario = dr("nome")
+                       usuario.idadeUsuarios= = CInt(dr("idade"))
+                        listaUsuario.Add(usuario)
+                    End While
+                    Return listaUsuarios
+                Catch ex As SqlException
+                    Throw ex
+                Finally
+                    con.Close()
+                End Try
+            End Using
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+End Class
